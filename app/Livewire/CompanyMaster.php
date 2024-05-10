@@ -85,7 +85,7 @@ class CompanyMaster extends Component
         session()->flash('success', 'Company '.($this->company_id ? 'Updated' : 'Created').' Successfully.');
 
         $this->resetInputFields();
-        $this->dispatchBrowserEvent('show-toastr', ['message' => 'Company '.($this->company_id ? 'Updated' : 'Created').' Successfully.']);
+        $this->dispatch('show-toastr', ['message' => 'Company '.($this->company_id ? 'Updated' : 'Created').' Successfully.']);
     }
 
     public function edit($id)
