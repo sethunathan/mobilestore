@@ -40,8 +40,8 @@
                             <div class="collapse menu-dropdown" id="sidebarDashboards">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="dashboard-analytics.html" class="nav-link" data-key="t-analytics">
-                                            Analytics </a>
+                                        <a href="{{ url('home') }}" class="nav-link" data-key="t-analytics">
+                                            Home </a>
                                     </li>
                                   
                                 </ul>
@@ -50,12 +50,12 @@
                         <li class="nav-item">
                             <a class="nav-link menu-link" href="#sidebarApps" data-bs-toggle="collapse"
                                 role="button" aria-expanded="false" aria-controls="sidebarApps">
-                                <i class="mdi mdi-view-grid-plus-outline"></i> <span data-key="t-apps">Apps</span>
+                                <i class="mdi mdi-view-grid-plus-outline"></i> <span data-key="t-apps">Master</span>
                             </a>
                             <div class="collapse menu-dropdown" id="sidebarApps">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="apps-calendar.html" class="nav-link" data-key="t-calendar"> Calendar
+                                        <a href="{{ url('company') }}" class="nav-link" data-key="t-calendar"> Company
                                         </a>
                                     </li>
                                     <li class="nav-item">
