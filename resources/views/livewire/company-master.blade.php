@@ -1,3 +1,5 @@
+
+
 <!-- resources/views/livewire/company-master.blade.php -->
 <div>
     <div class="row">
