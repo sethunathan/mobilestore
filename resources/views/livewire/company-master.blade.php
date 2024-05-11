@@ -7,7 +7,7 @@
 
         <div style="padding-left:30px;" class="col-md-8 col-xs-12">
 
-            <div class="card">
+            <div class="card" style="height: 80vh; overflow-y: auto;">
 
                 <div class="card-header">
                     <div class="row" style="padding-top: 20px; padding-left:20px;">
@@ -82,7 +82,7 @@
 
 
         <div class="col-md-4 col-xs-12">
-            <div class="card">
+            <div class="card" style="height: 80vh; overflow-y: auto;">
                 <div class="card-header card-header-border-bottom d-flex justify-content-between">
                     <h5>{{ $company_id ? 'Edit Company' : 'Create Company' }}</h5>
                 </div>
@@ -164,7 +164,8 @@
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
-                        <div class="form-group">
+
+                        <div class="form-group gap-2 mt-3">
                             <button type="submit" class="btn btn-primary">Save</button>
                             <button type="button" wire:click="create" class="btn btn-secondary">Cancel</button>
                         </div>
