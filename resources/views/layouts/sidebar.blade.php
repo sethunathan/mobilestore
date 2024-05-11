@@ -58,6 +58,12 @@
                                         <a href="{{ url('company') }}" class="nav-link" data-key="t-calendar"> Company
                                         </a>
                                     </li>
+
+                                    <li class="nav-item">
+                                        <a href="{{ url('companies') }}" class="nav-link" data-key="t-calendar"> Company api
+                                        </a>
+                                    </li>
+
                                     <li class="nav-item">
                                         <a href="apps-chat.html" class="nav-link" data-key="t-chat"> Chat </a>
                                     </li>
