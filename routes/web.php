@@ -7,6 +7,7 @@ Route::get('/', function () {
 });
 
 Route::get('/companies', function () {
+    
     return view('company-master');
 });
 
@@ -18,4 +19,4 @@ Route::get('/company', [App\Http\Controllers\HomeController::class, 'company'])-
 
 
 
-Route::get('/company/create', [App\Http\Controllers\HomeController::class, 'create_company'])->name('company.create');
+Route::get('/company/create', [App\Http\Controllers\HomeController::class, 'create_company'])->name('company.create');             
