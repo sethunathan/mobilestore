@@ -65,7 +65,8 @@
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="apps-chat.html" class="nav-link" data-key="t-chat"> Chat </a>
+                                        <a href="{{ url('company2') }}" class="nav-link" data-key="t-calendar"> Company Livewire
+                                        </a>
                                     </li>
                                     <li class="nav-item">
                                         <a href="#sidebarEmail" class="nav-link" data-bs-toggle="collapse"
