@@ -3,22 +3,27 @@ document.addEventListener('DOMContentLoaded', function() {
     
     fetchCompanies();
 
-    document.getElementById('company-form').addEventListener('submit', function(event) {
+       document.getElementById('company-form').addEventListener('submit', function(event) {
         event.preventDefault();
-        const companyId = document.getElementById('company_id').value;
+      const companyId = document.getElementById('company_id').value;
         createOrUpdateCompany(companyId);
-    });
+   });
 });
 
 function fetchCompanies() {
 
    
-    const searchValue = document.getElementById('search-box').value || '';  
-    fetch(`/api/companies?search=${encodeURIComponent(searchValue)}`)
+    //const searchValue = document.getElementById('search-box').value || ''; 
+    const searchValue ='';
+ 
+ //fetch(`/master/company?search=${encodeURIComponent(searchValue)}`)
+
+ fetch(`/api/companies?search=${encodeURIComponent(searchValue)}`) 
         .then(response => response.json())
         .then(data => {
             const tableBody = document.getElementById('companies-table').getElementsByTagName('tbody')[0];
             tableBody.innerHTML = '';
+
             data.data.forEach((company, index) => {
                 let row = tableBody.insertRow();
                 row.insertCell(0).innerHTML = company.id;
@@ -29,6 +34,8 @@ function fetchCompanies() {
                 actionsCell.innerHTML = `<button onclick="editCompany(${company.id})" class="btn btn-primary btn-sm">Edit</button>
                                          <button onclick="deleteCompany(${company.id})" class="btn btn-danger btn-sm">Delete</button>`;
             });
+
+
         });
 }
 
@@ -86,6 +93,9 @@ function resetForm() {
     document.getElementById('company_id').value = '';
 }
 
+
+
 function searchCompanies() {
+    
     fetchCompanies();
 }

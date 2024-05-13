@@ -8,6 +8,10 @@
     <div class="col-6">
          <div class="float-right"><a class="btn btn-sm  btn-primary" href="{{ url('master/company/create') }}">Add New</a></div>
            </div>
+           <div class="card-header">
+                    <input type="text" id="search-box" class="form-control" placeholder="Search Companies..."
+                     onkeyup="searchCompanies()">
+                </div>
         <div class="col-md-8">
             <div class="card"> 
                 <div class="card-body">

@@ -12,9 +12,17 @@ class CompanyController extends Controller
     
     public function index(Request $request)
     {
-        $company= Company::orderBy('concern_name','asc')->paginate(5);
-       // print_r(response()->json($company);
-        return view('master.company.company_master_view',compact('company'));
+          
+       // $company= Company::orderBy('concern_name','asc')->paginate(5); 
+        //return response()->json($company);
+        $search = $request->query('search');
+        $companies = Company::when($search, function ($query, $search) {
+            return $query->where('concern_name', 'like', '%' . $search . '%');
+        })->orderBy('id', 'desc')->paginate(10);
+
+       // return response()->json($companies);
+      //return response()->json($companies);
+       return view('master.company.company_master_view',compact('companies'));
     }
 
     public function create()

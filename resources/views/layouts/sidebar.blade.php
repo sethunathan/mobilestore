@@ -55,19 +55,11 @@
                             <div class="collapse menu-dropdown" id="sidebarApps">
                                 <ul class="nav nav-sm flex-column">
                                     <li class="nav-item">
-                                        <a href="{{ url('company') }}" class="nav-link" data-key="t-calendar"> Company
+                                        <a href="{{ url('master/company') }}" class="nav-link" data-key="t-calendar"> Company
                                         </a>
                                     </li>
 
-                                    <li class="nav-item">
-                                        <a href="{{ url('companies') }}" class="nav-link" data-key="t-calendar"> Company api
-                                        </a>
-                                    </li>
-
-                                    <li class="nav-item">
-                                        <a href="{{ url('company2') }}" class="nav-link" data-key="t-calendar"> Company Livewire
-                                        </a>
-                                    </li>
+                                   
                                     <li class="nav-item">
                                         <a href="#sidebarEmail" class="nav-link" data-bs-toggle="collapse"
                                             role="button" aria-expanded="false" aria-controls="sidebarEmail"

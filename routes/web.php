@@ -7,10 +7,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/companies', function () {
-    
-    return view('master/company/company-master-view');
-});
  
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

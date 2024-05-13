@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function fetchCompanies() {
 
-    alert('s');
+   
     const searchValue = document.getElementById('search-box').value || '';  
     fetch(`/api/companies?search=${encodeURIComponent(searchValue)}`)
         .then(response => response.json())
