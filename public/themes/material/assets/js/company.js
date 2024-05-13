@@ -13,12 +13,13 @@ document.addEventListener('DOMContentLoaded', function() {
 function fetchCompanies() {
 
    
-    //const searchValue = document.getElementById('search-box').value || ''; 
-    const searchValue ='';
+    const searchValue = document.getElementById('search-box').value || ''; 
+   // const searchValue ='';
  
  //fetch(`/master/company?search=${encodeURIComponent(searchValue)}`)
+ //fetch(`/api/companies?search=${encodeURIComponent(searchValue)}`)
 
- fetch(`/api/companies?search=${encodeURIComponent(searchValue)}`) 
+ fetch(`/master/company/searchrecords?search=${encodeURIComponent(searchValue)}`) 
         .then(response => response.json())
         .then(data => {
             const tableBody = document.getElementById('companies-table').getElementsByTagName('tbody')[0];

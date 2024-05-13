@@ -7,10 +7,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
- 
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('master/company/searchrecords', [Master\CompanyController::class, 'searchrecords']);   
 Route::get('/master/company', [Master\CompanyController::class, 'index']);
 Route::get('/master/company/create', [Master\CompanyController::class, 'create']);
 Route::post('/master/company/store', [Master\CompanyController::class, 'store']);
