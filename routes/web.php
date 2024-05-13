@@ -11,8 +11,7 @@ Route::get('/companies', function () {
     
     return view('master/company/company-master-view');
 });
-
-Auth::routes();
+ 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -21,3 +20,4 @@ Route::get('/master/company/create', [Master\CompanyController::class, 'create']
 Route::post('/master/company/store', [Master\CompanyController::class, 'store']);
 Route::get('/master/company/edit/{number?}', [Master\CompanyController::class, 'edit']);
 Route::post('/master/company/update',  [Master\CompanyController::class, 'update']);    
+Auth::routes();

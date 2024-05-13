@@ -7,21 +7,27 @@
        
         <div class="col-md-4">
             <div class="card">
-                <div class="card-header">Company Details</div>
+                <div class="card-header">Our Company Details</div>
                 <div class="card-body">
-                    <form id="company-form">
+
+                <form id="company-form" name ="company" action="{{ url('master/company/store') }}"
+                         method="POST"   >
+
+                         <input type="hidden" name="_method" value="POST">
+                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <input type="hidden" id="company_id">
                         <div class="form-group">
-                            <label for="concern_name">Our Concern Name:</label>
-                            <input type="text" id="concern_name" class="form-control" required>
+                            <label for="concern_name">Our Company Name:</label>
+                            <input type="text" id="concern_name" name="concern_name" class="form-control" required>
                         </div>
+
                         <div class="form-group">
                             <label for="phone">Phone:</label>
-                            <input type="text" id="phone" class="form-control">
+                            <input type="text" id="phone"   name="phone" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="email">Email:</label>
-                            <input type="email" id="email" class="form-control">
+                            <input type="email" id="email"  name="email" class="form-control">
                         </div>
                         <div> <br>
                         </div>
