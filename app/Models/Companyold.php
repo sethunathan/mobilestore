@@ -14,6 +14,4 @@ class Company extends Model
         'phone', 'mobile', 'pan_no', 'gst_no', 'hsn_code', 
         'email', 'udayam_reg_no', 'year_id', 'status'
     ];
-
-    
 }

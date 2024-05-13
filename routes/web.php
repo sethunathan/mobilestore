@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Master; 
 
 Route::get('/', function () {
     return view('welcome');
@@ -8,17 +9,15 @@ Route::get('/', function () {
 
 Route::get('/companies', function () {
     
-    return view('company-master');
+    return view('master/company/company-master-view');
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/company', [App\Http\Controllers\HomeController::class, 'company'])->name('company');
-
-
-Route::get('/company2', [App\Http\Controllers\HomeController::class, 'company2'])->name('company2');
-
-
-Route::get('/company/create', [App\Http\Controllers\HomeController::class, 'create_company'])->name('company.create');             
+Route::get('/master/company', [Master\CompanyController::class, 'index']);
+Route::get('/master/company/create', [Master\CompanyController::class, 'create']);
+Route::post('/master/company/store', [Master\CompanyController::class, 'store']);
+Route::get('/master/company/edit/{number?}', [Master\CompanyController::class, 'edit']);
+Route::post('/master/company/update',  [Master\CompanyController::class, 'update']);    
