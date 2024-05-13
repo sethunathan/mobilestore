@@ -13,7 +13,7 @@ class CompanyController extends Controller
     public function index(Request $request)
     {
         $company= Company::orderBy('concern_name','asc')->paginate(5);
-        //return response()->json($company);
+       // print_r(response()->json($company);
         return view('master.company.company_master_view',compact('company'));
     }
 
