@@ -10,11 +10,16 @@ document.addEventListener('DOMContentLoaded', function() {
    });
 });
 
+function checkAvailabilityCompanyName()
+{
+    alert('s');
+}
+
 function fetchCompanies() {
 
    
-    const searchValue = document.getElementById('search-box').value || ''; 
-   // const searchValue ='';
+   // const searchValue = document.getElementById('search-box').value || ''; 
+    const searchValue ='';
  
  //fetch(`/master/company?search=${encodeURIComponent(searchValue)}`)
  //fetch(`/api/companies?search=${encodeURIComponent(searchValue)}`)
@@ -40,8 +45,20 @@ function fetchCompanies() {
         });
 }
 
+function editCompany(id) {
+    fetch(`/master/company/${id}`)
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('company_id').value = data.id;
+            document.getElementById('concern_name').value = data.concern_name;
+            document.getElementById('phone').value = data.phone;
+            document.getElementById('email').value = data.email;
+        });
+}
+
+
 function createOrUpdateCompany(companyId) {
-    const url = companyId ? `/api/companies/${companyId}` : '/api/companies';
+    const url = companyId ? `/master/company/${companyId}` : '/api/companies';
     const method = companyId ? 'PUT' : 'POST';
     const data = {
         concern_name: document.getElementById('concern_name').value,
@@ -64,17 +81,6 @@ function createOrUpdateCompany(companyId) {
         fetchCompanies();
     })
     .catch(error => alert('Error saving company: ' + error));
-}
-
-function editCompany(id) {
-    fetch(`/api/companies/${id}`)
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById('company_id').value = data.id;
-            document.getElementById('concern_name').value = data.concern_name;
-            document.getElementById('phone').value = data.phone;
-            document.getElementById('email').value = data.email;
-        });
 }
 
 function deleteCompany(id) {
