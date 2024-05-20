@@ -15,7 +15,7 @@
 
                          <input type="hidden" name="_method" value="POST">
                          <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <input type="hidden" id="company_id">
+                         <input type="hidden" id="company_id">
                         <div class="form-group">
                             <label for="concern_name">Our Company Name:</label>
                             <input type="text" id="concern_name"
@@ -24,22 +24,19 @@
                               <span class="glyphicon glyphicon-user form-control-feedback"></span>
 			                  <span id="user-availability-status"></span>    
                         </div>
-                       <?php echo asset('storage/file.txt'); ?>
+                        <br>
+                    
                         <div class="form-group">
-
-
-                        <img class="rounded" alt="200x200" width="200" src="assets/images/small/img-4.jpg">
-                        <img class="rounded-circle avatar-xl" alt="200x200" src="assets/images/users/avatar-4.jpg">
-
-                        <img class="rounded-circle header-profile-user" src="websiteLoaderIcon.jpeg'" alt="Header Avatar"/>
-                        <img src="{{ asset('/public/themes/material/assets/images/users/avatar-1.jpg') }}" alt="job image" title="job image">
-                        <img src="storage/website/websiteLoaderIcon.jpeg "  id="loaderIcon"  />
+ 
+                        <img height="50" width="50" src="{{ url('laravel/d.jpg') }}" alt="test" title="" />
                            <div class="txt-heading"  id="panerror" ></div>
                            </div>
+                           <br>
                         <div class="form-group">
                             <label for="phone">Phone:</label>
                             <input type="text" id="phone"   name="phone" class="form-control">
                         </div>
+                        <br>
                         <div class="form-group">
                             <label for="email">Email:</label>
                             <input type="email" id="email"  name="email" class="form-control">

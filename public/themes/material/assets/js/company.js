@@ -1,19 +1,81 @@
-// public/js/company.js
 document.addEventListener('DOMContentLoaded', function() {
     
     fetchCompanies();
+    initvar();
 
-       document.getElementById('company-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-      const companyId = document.getElementById('company_id').value;
-        createOrUpdateCompany(companyId);
+    document.getElementById('company-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const companyId = document.getElementById('company_id').value;
+    createOrUpdateCompany(companyId);
    });
 });
 
+
+//onkeydown
+let val = document.getElementById("company-form"); 
+
+val.onkeypress = function (key) { 
+    var btn = 0 || key.keyCode || key.charCode; 
+    if (btn == 13) {  
+        key.preventDefault(); 
+    } 
+}  
+
+ 
+//focus/blur/focusin/focusout
+//object.onfocus = function(){myScript};
+//object.addEventListener("focus", myScript);
+//<img onmouseenter="bigImg(this)" onmouseleave="normalImg(this)" border="0" src="smiley.gif" alt="Smiley" width="32" height="32"></img>
+
+
+let x = document.getElementById("concern_name");
+
+x.addEventListener("focus", setfocusconcern, true); 
+x.addEventListener("focusout", setfocusoutconcern, true); 
+x.addEventListener("blur", setblurconcern, true);
+
+function setfocusconcern()
+{
+    document.getElementById("phone").style.backgroundColor = "blue";
+
+}
+
+function setfocusoutconcern()
+{
+    
+    document.getElementById("phone").style.backgroundColor = "red";
+
+}
+
+function setblurconcern()
+{
+    
+    document.getElementById("phone").style.backgroundColor = "yellow";
+
+}
+
+
+function initvar()
+{
+   
+    document.getElementById('concern_name').value="";
+    document.getElementById('phone').value="";
+    document.getElementById('email').value="";
+    $('#concern_name').focus();
+    
+
+
+
+}
+
+// onBlur="checkAvailabilityCompanyName()" 
+//object.addEventListener("blur", myScript);
+
 function checkAvailabilityCompanyName()
 {
-    alert('s');
+   
 }
+
 
 function fetchCompanies() {
 
